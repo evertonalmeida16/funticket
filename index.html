@@ -26,8 +26,8 @@
                 <img src="tickets_admission.png" id="logo_funticket">
             </a>
             <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2"  style="border-radius: 40px; width: 400px; float: center; padding: 10px;" type="search" placeholder="Procurar eventos,shows,teatros..." aria-label="Search">
-              <button class="btn" type="submit"><img src="lupa_search.png" id="lupa_search"></button>
+              <input class="form-control mr-sm-2"  style="border-radius: 40px; width: 400px; float: center; padding: 10px;" type="search" placeholder="Procurar eventos,shows,teatros..." aria-label="Search" id="searchEvent">
+              <button class="btn" type="button"><img src="lupa_search.png" id="lupa_search"></button>
             </form>
             <div class="dropdown btn-group dropleft">
               <button class="dropbtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="user.png"></button>
@@ -104,136 +104,199 @@
             <hr class="new_hr">
         </div>
 
-        <!--Carousel Wrapper-->
-        <div class="carousel slide carousel-multi-item carousel-multi-item-2">
+        <div class="row col-lg-12 container" id="filterDiv">
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show.jpg"/>
-                </a>
-                <span class="descricao_show"> Henrique e Juliano - Centro de Tradições Nordestinas </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img class="img-fluid" src="show.jpg" alt="Henrique e Juliano - Centro de Tradições Nordestinas" />
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Henrique e Juliano - Centro de Tradições Nordestinas </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show1.jpg"/>
-                </a>
-                <span class="descricao_show"> Jorge Aragão - Memórial América Latina </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Jorge Aragão - Memórial América Latina" class="img-fluid" src="show1.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Jorge Aragão - Memórial América Latina </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show2.jpg"/>
-                </a>
-                <span class="descricao_show"> Zé Neto e Cristiano - Villa Country </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Zé Neto e Cristiano - Villa Country" class="img-fluid" src="show2.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Zé Neto e Cristiano - Villa Country </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show3.jpg"/>
-                </a>
-                <span class="descricao_show"> Reggae Live Studio - Espaço das Américas </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Reggae Live Studio - Espaço das Américas" class="img-fluid" src="show3.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Reggae Live Studio - Espaço das Américas </span>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-1"><hr></div>
+
+          <div class="col-md-3 mb-1">
+            <div class="container">
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Brunello Di Montalcino - Baby Beef Jardim" class="img-fluid" src="show4.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Brunello Di Montalcino - Baby Beef Jardim </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show4.jpg"/>
-                </a>
-                <span class="descricao_show"> Brunello Di Montalcino - Baby Beef Jardim </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Paulo Ricardo - Clube esportivo da Penha" class="img-fluid" src="show5.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Paulo Ricardo - Clube esportivo da Penha </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show5.jpg"/>
-                </a>
-                <span class="descricao_show"> Paulo Ricardo - Clube esportivo da Penha </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Tiee - Templo Music" class="img-fluid" src="show6.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Tiee - Templo Music </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show6.jpg"/>
-                </a>
-                <span class="descricao_show"> Tiee - Templo Music </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Cover Marilyn Monroe - Officina's Pub" class="img-fluid" src="show7.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Cover Marilyn Monroe - Officina's Pub </span>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-1"><hr></div>
+
+          <div class="col-md-3 mb-1">
+            <div class="container">
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Open Bar, Open Food - Brabus" class="img-fluid" src="show8.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Open Bar, Open Food - Brabus  </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show7.jpg"/>
-                </a>
-                <span class="descricao_show"> Cover Marilyn Monroe - Officina's Pub </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Alexandre Pires - Espaço das Américas" class="img-fluid" src="show9.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Alexandre Pires - Espaço das Américas </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show8.jpg"/>
-                </a>
-                <span class="descricao_show"> Open Bar, Open Food - Brabus  </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Eduardo Costa e Edson e Hudson - Estância Alto da Serra" class="img-fluid" src="show10.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Eduardo Costa e Edson e Hudson - Estância Alto da Serra </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show9.jpg"/>
-                </a>
-                <span class="descricao_show"> Alexandre Pires - Espaço das Américas </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img alt="Henrique e Diego, Ressaca Junina - Sutton São Paulo" class="img-fluid" src="show11.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Henrique e Diego, Ressaca Junina - Sutton São Paulo </span>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-1"><hr></div>
+
+          <div class="col-md-3 mb-1">
+            <div class="container">
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img class="img-fluid" src="show12.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Ausländer Halloween Party - Espaço das Américas </span>
+                </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-1">
             <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show10.jpg"/>
-                </a>
-                <span class="descricao_show"> Eduardo Costa e Edson e Hudson - Estância Alto da Serra </span>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-1">
-            <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show11.jpg"/>
-                </a>
-                <span class="descricao_show"> Henrique e Diego, Ressaca Junina - Sutton São Paulo </span>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-1">
-            <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show12.jpg"/>
-                </a>
-                <span class="descricao_show"> Ausländer Halloween Party - Espaço das Américas </span>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-1">
-            <div class="container">
-                <a href="#" data-toggle="modal" data-target="#firstSlide">
-                    <img class="img-fluid" src="show13.jpg"/>
-                </a>
-                <span class="descricao_show"> Grupo Clareou - Templo Music </span>
+                <div class="col-lg-12">
+                    <a href="#" data-toggle="modal" data-target="#firstSlide">
+                        <img class="img-fluid" src="show13.jpg"/>
+                    </a>
+                </div>
+                <div class="col-lg-12">
+                    <span class="descricao_show"> Grupo Clareou - Templo Music </span>
+                </div>
             </div>
           </div>
 
         </div>
+
+
 
         <!-- Modal -->
         <div class="modal fade bd-example-modal-xl" id="firstSlide" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -532,6 +595,15 @@ var quantitiy3=0;
             $('#quantity-3').val(quantity3 - 1);
             }
     });
+
+    $('#searchEvent').keyup(function() {
+        var value = $(this).val().toLowerCase();
+        $("#filterDiv > *").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+        });
+    });
+
 
     
 function somarValores(valor) {
