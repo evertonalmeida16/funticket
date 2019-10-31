@@ -32,9 +32,8 @@
             <div class="dropdown btn-group dropleft">
               <button class="dropbtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="user.png"></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Meu Login</a>
-                <a class="dropdown-item" href="#">Meus Ingressos</a>
-                <a class="dropdown-item" href="#">Meu Carrinho</a>
+                <a class="dropdown-item" href="login.html">Meu Login</a>
+                <a class="dropdown-item" href="ingressos.html">Meus Ingressos</a>
               </div>
             </div>
           </div>
@@ -318,7 +317,7 @@
                     <div class="col-lg-2">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" onclick="subValores(58)">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="pistaInt" onclick="subValores(58)">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </span>
@@ -339,7 +338,7 @@
                     <div class="col-lg-2">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus-1 btn btn-danger btn-number"  data-type="minus" data-field="" onclick="subValores(29)">
+                                <button type="button" class="quantity-left-minus-1 btn btn-danger btn-number"  data-type="minus" data-field="" id="pistaMei" onclick="subValores(29)">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </span>
@@ -360,7 +359,7 @@
                     <div class="col-lg-2">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus-2 btn btn-danger btn-number"  data-type="minus" data-field="" onclick="subValores(108)">
+                                <button type="button" class="quantity-left-minus-2 btn btn-danger btn-number"  data-type="minus" data-field="" id="camInt" onclick="subValores(108)">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </span>
@@ -381,7 +380,7 @@
                     <div class="col-lg-2">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus-3 btn btn-danger btn-number"  data-type="minus" data-field="" onclick="subValores(54)">
+                                <button type="button" class="quantity-left-minus-3 btn btn-danger btn-number"  data-type="minus" data-field="" id="camMei" onclick="subValores(54)">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </span>
@@ -609,6 +608,7 @@ var quantitiy3=0;
 function somarValores(valor) {
 
     if (valor == 58) {
+
         var elem = parseInt($('#quantity').val()) + 1;
         var result = parseInt($('#result').val());
 
@@ -671,71 +671,105 @@ function somarValores(valor) {
 
 function subValores(valor) {
     if (valor == 58) {
-        var result = parseInt($('#result').val());
 
-        if (result > 0) {
-            resultado = result - valor;
+        var input = document.getElementById('quantity').value;
+        if (input == 0) {
+            return false;
         }else{
-            resultado = 0;
-            document.getElementById('quantity').value='0';
-            document.getElementById('quantity-1').value='0';
-            document.getElementById('quantity-2').value='0';
-            document.getElementById('quantity-3').value='0';
-        }
 
-        document.getElementById("resultado").innerHTML = resultado+',00';
-        $('#result').val(resultado);
+            var result = parseInt($('#result').val());
+
+            if (result > 0) {
+                resultado = result - valor;
+            }else{
+                resultado = 0;
+                document.getElementById('quantity').value='0';
+                document.getElementById('quantity-1').value='0';
+                document.getElementById('quantity-2').value='0';
+                document.getElementById('quantity-3').value='0';
+            }
+
+            document.getElementById("resultado").innerHTML = resultado+',00';
+            $('#result').val(resultado);
+
+        }
     }
 
     if (valor == 29) {
-        var result = parseInt($('#result').val());
 
-        if (result > 0) {
-            resultado = result - valor;
+        var input = document.getElementById('quantity-1').value;
+        if (input == 0) {
+            return false;
         }else{
-            resultado = 0;
-            document.getElementById('quantity').value='0';
-            document.getElementById('quantity-1').value='0';
-            document.getElementById('quantity-2').value='0';
-            document.getElementById('quantity-3').value='0';
+
+            var result = parseInt($('#result').val());
+
+            if (result > 0) {
+                resultado = result - valor;
+            }else{
+                resultado = 0;
+                document.getElementById('quantity').value='0';
+                document.getElementById('quantity-1').value='0';
+                document.getElementById('quantity-2').value='0';
+                document.getElementById('quantity-3').value='0';
+            }
+
+            document.getElementById("resultado").innerHTML = resultado+',00';
+            $('#result').val(resultado);
+
         }
 
-        document.getElementById("resultado").innerHTML = resultado+',00';
-        $('#result').val(resultado);
     }
 
     if (valor == 108) {
-        var result = parseInt($('#result').val());
-
-        if (result > 0) {
-            resultado = result - valor;
+        
+        var input = document.getElementById('quantity-2').value;
+        if (input == 0) {
+            return false;
         }else{
-            resultado = 0;
-            document.getElementById('quantity').value='0';
-            document.getElementById('quantity-1').value='0';
-            document.getElementById('quantity-2').value='0';
-            document.getElementById('quantity-3').value='0';
+
+            var result = parseInt($('#result').val());
+
+            if (result > 0) {
+                resultado = result - valor;
+            }else{
+                resultado = 0;
+                document.getElementById('quantity').value='0';
+                document.getElementById('quantity-1').value='0';
+                document.getElementById('quantity-2').value='0';
+                document.getElementById('quantity-3').value='0';
+            }
+
+            document.getElementById("resultado").innerHTML = resultado+',00';
+            $('#result').val(resultado);
+
         }
 
-        document.getElementById("resultado").innerHTML = resultado+',00';
-        $('#result').val(resultado);
     }
 
     if (valor == 54) {
-        var result = parseInt($('#result').val());
-
-        if (result > 0) {
-            resultado = result - valor;
+        
+        var input = document.getElementById('quantity-3').value;
+        if (input == 0) {
+            return false;
         }else{
-            resultado = 0;
-            document.getElementById('quantity').value='0';
-            document.getElementById('quantity-1').value='0';
-            document.getElementById('quantity-2').value='0';
-            document.getElementById('quantity-3').value='0';
+
+            var result = parseInt($('#result').val());
+
+            if (result > 0) {
+                resultado = result - valor;
+            }else{
+                resultado = 0;
+                document.getElementById('quantity').value='0';
+                document.getElementById('quantity-1').value='0';
+                document.getElementById('quantity-2').value='0';
+                document.getElementById('quantity-3').value='0';
+            }
+
+            document.getElementById("resultado").innerHTML = resultado+',00';
+            $('#result').val(resultado);
         }
 
-        document.getElementById("resultado").innerHTML = resultado+',00';
-        $('#result').val(resultado);
     }
 }
 
