@@ -18,6 +18,13 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <script src="sweetalert2.all.min.js"></script>
 
+        
+        <style>
+          #map{
+            height:400px;
+            width:100%;
+          }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#8B0000;">
@@ -392,16 +399,101 @@
                             </span>
                         </div>
                     </div>
+                    <div class="col-lg-12"  id="valor" style="display: none">
+                      <div class="col-lg-12">
+                          <br>
+                      </div>
+                      <div class="col-lg-12" align="right">
+                          <p><strong> Total: R$ </strong><strong id="resultado"></strong></p>
+                          <input type="hidden" name="result" id="result" value="0">
+                      </div>
+                    </div>
                     <div class="col-lg-12">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <hr>
                     </div>
-                    <div class="col-lg-12" align="right" id="valor" style="display: none">
-                        <p><strong> Total: R$ </strong><strong id="resultado"></strong></p>
-                        <input type="hidden" name="result" id="result" value="0">
+                    <div class="col-lg-12">
+                      <h2>
+                        <span class="descricao_show">Localização</span>
+                      </h2>
+                      <div id="map"></div>
                     </div>
+                    <script>
+                      function initMap(){
+                        // Map options
+                        var options = {
+                          zoom:10,
+                          center:{lat:-23.5489,lng:-46.6388}
+                        }
+
+                        // New map
+                        var map = new google.maps.Map(document.getElementById('map'), options);
+
+                        // Listen for click on map
+                        google.maps.event.addListener(map, 'click', function(event){
+                          // Add marker
+                          addMarker({coords:event.latLng});
+                        });
+
+                        /*
+                        // Add marker
+                        var marker = new google.maps.Marker({
+                          position:{lat:42.4668,lng:-70.9495},
+                          map:map,
+                          icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                        });
+
+                        var infoWindow = new google.maps.InfoWindow({
+                          content:'<h1>Lynn MA</h1>'
+                        });
+
+                        marker.addListener('click', function(){
+                          infoWindow.open(map, marker);
+                        });
+                        */
+
+                        // Array of markers
+                        var markers = [
+                          {
+                            coords:{lat:-23.5489,lng:-46.6388},
+                          }
+                        ];
+
+                        // Loop through markers
+                        for(var i = 0;i < markers.length;i++){
+                          // Add marker
+                          addMarker(markers[i]);
+                        }
+
+                        // Add Marker Function
+                        function addMarker(props){
+                          var marker = new google.maps.Marker({
+                            position:props.coords,
+                            map:map,
+                            //icon:props.iconImage
+                          });
+
+                          // Check for customicon
+                          if(props.iconImage){
+                            // Set icon image
+                            marker.setIcon(props.iconImage);
+                          }
+
+                          // Check content
+                          if(props.content){
+                            var infoWindow = new google.maps.InfoWindow({
+                              content:props.content
+                            });
+
+                            marker.addListener('click', function(){
+                              infoWindow.open(map, marker);
+                            });
+                          }
+                        }
+                      }
+                    </script>
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByKwyO6JkJ7syr3rlYYbyx7XaQZETzy-M&callback=initMap">
+                    </script>
                 </div>
               </div>
               <div class="modal-footer">
